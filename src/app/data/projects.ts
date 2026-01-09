@@ -30,12 +30,12 @@ export const projects: Project[] = [
   },
   {
     slug: "xr-grid-authoring",
-    title: "Multimodal iPadOS Interface Development",
+    title: "Multimodal iPadOS Development",
     description:
       "Built multi-sensory interaction flows using spatialized audio, haptic feedback, and tactile cues and led end-to-end HCI research",
     role: "Front-End / Prototyping",
     timeframe: "2025",
-    tags: ["iOS Dev", "UI/UX", "Swift"],
+    tags: ["SwiftUI", "UI/UX"],
     featured: true,
     image: "/projects/ipad.jpg",
     link: "https://shape.stanford.edu/", // ← can be internal later
