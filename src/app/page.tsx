@@ -1,116 +1,130 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Nav } from "@/components/Nav";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ExperienceItem } from "@/components/ExperienceItem";
+import { ExperienceCard } from "@/components/ExperienceCard";
 import { site } from "@/data/site";
 import { projects } from "@/data/projects";
 import { experience } from "@/data/experience";
+import { Linkedin, Mail, Github } from "lucide-react";
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured);
+  const featuredProjects = projects.filter((p) => p.featured);
 
   return (
     <div>
-      <Nav />
+      {/* Background wrapper (everything except footer) */}
+      <div className="bg-[var(--warm-bg)] pb-24 md:pb-32">
+        <Nav />
 
-      <main className="py-14 md:py-20">
-        <Container>
-          {/* Hero */}
-          <div className="space-y-4">
-            <p className="text-sm text-zinc-600">{site.location}</p>
-            <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
-              {site.title}
-            </h1>
-            <p className="max-w-2xl text-base text-zinc-700 md:text-lg">
-              {site.about.headline}
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm hover:border-zinc-300"
-                href="#projects"
-              >
-                View projects
-              </a>
-              <a
-                className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm hover:border-zinc-300"
-                href={`mailto:${site.email}`}
-              >
-                Contact
-              </a>
-              <a
-                className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm hover:border-zinc-300"
-                href={site.links.resume}
-              >
-                Resume
-              </a>
-            </div>
-          </div>
+        <main className="py-10 md:py-16">
+          <Container>
+            {/* ABOUT */}
+            <section className="mt-1 pb-16 min-h-[calc(100vh-64px)] flex items-start md:items-center">
+              <div className="grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr] md:items-center pt-6 -translate-y-10">
+                {/* Left: Polaroid + links */}
+                <div className="flex flex-col items-start">
+                  <div className="rounded-md border border-zinc-300/70 bg-white p-3 shadow-sm">
+                    <div className="relative h-[240px] w-[220px] overflow-hidden rounded-sm bg-zinc-100">
+                      <Image
+                        src="/me.jpg"
+                        alt="Portrait of Min Jung"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                    <div className="mt-3 h-6" />
+                  </div>
 
-          {/* About */}
-          <section id="about" className="mt-16 md:mt-20">
-            <SectionHeader title="About" />
-            <div className="max-w-3xl space-y-3 text-sm text-zinc-700 md:text-base">
-              {site.about.bio.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </section>
+                  {/* icon links */}
+                  <div className="mt-6 flex flex-col gap-3 translate-x-20">
+                    <a
+                      href={site.links.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin size={18} />
+                      <span>LinkedIn</span>
+                    </a>
 
-          {/* Projects */}
-          <section id="projects" className="mt-16 md:mt-20">
-            <SectionHeader
-              title="Projects"
-              description="Selected work across product design, prototyping, and interactive systems."
-            />
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {featured.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
-              ))}
-            </div>
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      aria-label="Email"
+                    >
+                      <Mail size={18} />
+                      <span>Email</span>
+                    </a>
 
-            <div className="mt-6">
-              <a
-                className="text-sm text-zinc-600 hover:text-zinc-900 underline underline-offset-4"
-                href="/projects"
-              >
-                View all projects →
-              </a>
-            </div>
-          </section>
+                    <a
+                      href={site.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      aria-label="GitHub"
+                    >
+                      <Github size={18} />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                </div>
 
-          {/* Experience */}
-          <section id="experience" className="mt-16 md:mt-20">
-            <SectionHeader
-              title="Experience"
-              description="Research, leadership, and shipping real work."
-            />
-            <div className="grid grid-cols-1 gap-4">
-              {experience.map((e) => (
-                <ExperienceItem key={`${e.org}-${e.role}`} item={e} />
-              ))}
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer className="mt-16 border-t border-zinc-100 pt-8 text-sm text-zinc-600">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>© {new Date().getFullYear()} {site.name}</div>
-              <div className="flex gap-4">
-                <a className="hover:text-zinc-900" href={site.links.linkedin}>
-                  LinkedIn
-                </a>
-                <a className="hover:text-zinc-900" href={site.links.github}>
-                  GitHub
-                </a>
-                <a className="hover:text-zinc-900" href={`mailto:${site.email}`}>
-                  Email
-                </a>
+                {/* Right: text hierarchy */}
+                <div className="flex flex-col justify-center -translate-y-10">
+                  <p className="text-[18px] font-bold text-zinc-800 md:text-[24px]">
+                    Hello! I&apos;m
+                  </p>
+                  <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
+                    Min Jung
+                  </h1>
+                  <p className="mt-8 max-w-2xl text-[15px] leading-7 text-zinc-700 md:text-[17px] md:leading-8">
+                    I&apos;m a designer and developer studying{" "}
+                    <span className="font-semibold text-zinc-900">
+                      Symbolic Systems
+                      (Human-Computer Interaction)
+                    </span>{" "}
+                    at Stanford University.
+                  </p>
+                </div>
               </div>
-            </div>
-          </footer>
-        </Container>
-      </main>
+            </section>
+
+            {/* PROJECTS */}
+            <section id="projects" className="mt-6 md:mt-10">
+              <SectionHeader title="Projects" />
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {featuredProjects.map((p) => (
+                  <ProjectCard key={p.slug} project={p} />
+                ))}
+              </div>
+            </section>
+
+            {/* EXPERIENCE */}
+            <section id="experience" className="mt-20 md:mt-36">
+              <SectionHeader title="Experience" />
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {experience.map((e) => (
+                  <ExperienceCard key={`${e.org}-${e.role}`} item={e} />
+                ))}
+              </div>
+            </section>
+          </Container>
+        </main>
+      </div>
+
+      {/* FOOTER (outside warm background) */}
+      <footer className="bg-white py-20 text-center">
+        <p className="text-lg font-medium text-black">
+          Thank you for your interest in my work!
+        </p>
+        <p className="mt-2 text-sm text-black">
+          Made with Figma & React. © 2025 Min Jung
+        </p>
+      </footer>
     </div>
   );
 }

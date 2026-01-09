@@ -1,36 +1,46 @@
-import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { TagPill } from "@/components/TagPill";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="group block rounded-2xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-zinc-300"
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-base font-medium tracking-tight">
-            {project.title}
-          </h3>
-          <p className="mt-1 text-sm text-zinc-600">{project.description}</p>
+    <div className="rounded-2xl border border-zinc-300/70 bg-white/70 p-4 shadow-sm">
+      {/* Image slot */}
+      <div className="h-44 w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
+  {project.image && (
+    <img
+      src={project.image}
+      alt={project.title}
+      className="h-full w-full object-cover"
+    />
+  )}
+</div>
+      <div className="mt-4">
+        <h3 className="mt-1 text-base font-semibold tracking-tight">
+          {project.title}
+        </h3>
+        <p className="mt-2 text-sm leading-6 text-zinc-700">
+          {project.description}
+        </p>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.tags.slice(0, 6).map((t) => (
+            <TagPill key={t}>{t}</TagPill>
+          ))}
         </div>
-        <div className="shrink-0 text-xs text-zinc-500">{project.timeframe}</div>
-      </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags.slice(0, 5).map((t) => (
-          <TagPill key={t}>{t}</TagPill>
-        ))}
+        {/* View more link */}
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block text-sm font-medium text-zinc-900 hover:underline"
+          >
+            View project →
+          </a>
+        )}
+        
       </div>
-
-      <div className="mt-4 text-sm text-zinc-600">
-        <span className="text-zinc-900">Role:</span> {project.role}
-      </div>
-
-      <div className="mt-4 text-sm text-zinc-500 group-hover:text-zinc-700">
-        View case study →
-      </div>
-    </Link>
+    </div>
   );
 }

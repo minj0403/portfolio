@@ -5,6 +5,7 @@ export type Project = {
   role: string;
   timeframe: string;
   tags: string[];
+  image?: string;
   link?: string;
   featured?: boolean;
   highlights?: string[];
@@ -13,26 +14,30 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "carta-redesign",
-    title: "Carta — Course Planning Redesign",
+    title: "Voice-Enabled Medication Tracker App",
     description:
-      "Redesigned key tabs to improve information hierarchy and decision-making with clearer data visuals.",
+      "Led end-to-end UX design from needfinding, usability testing, and iterative prototyping and implemented mobile and web front-end interfaces in React Native and Next.js",
     role: "UX/UI Designer",
     timeframe: "2025",
-    tags: ["UX", "UI", "Figma", "Design Systems"],
+    tags: ["UI/UX", "Figma", "React"],
     featured: true,
     highlights: [
       "Reworked information architecture for the course view",
       "Designed new graphs + review flows",
     ],
+    image: "/projects/147.png",
+    link: "https://carta-beta.stanford.edu/", // ← add this
   },
   {
     slug: "xr-grid-authoring",
-    title: "XR iPad Authoring Grid",
+    title: "Multimodal iPadOS Interface Development",
     description:
-      "Rebuilt an authoring interface with a scalable 4×4 grid and sonified quadrants for memory support.",
+      "Built multi-sensory interaction flows using spatialized audio, haptic feedback, and tactile cues and led end-to-end HCI research",
     role: "Front-End / Prototyping",
     timeframe: "2025",
-    tags: ["React", "UX", "Audio", "Prototype"],
+    tags: ["iOS Dev", "UI/UX", "Swift"],
     featured: true,
+    image: "/projects/ipad.jpg",
+    link: "https://shape.stanford.edu/", // ← can be internal later
   },
 ];

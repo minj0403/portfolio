@@ -1,16 +1,14 @@
 export function SectionHeader({
   title,
-  description,
 }: {
   title: string;
-  description?: string;
 }) {
   return (
     <div className="mb-6">
-      <h2 className="text-lg font-medium tracking-tight">{title}</h2>
-      {description ? (
-        <p className="mt-1 text-sm text-zinc-600">{description}</p>
-      ) : null}
+      <h2 className="text-xl font-semibold tracking-tight text-zinc-800">
+        {title}
+      </h2>
     </div>
   );
 }
+
