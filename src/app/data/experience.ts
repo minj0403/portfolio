@@ -12,7 +12,7 @@ export const experience: Experience[] = [
   {
     org: "Product Designer",
     role: "VP of Events",
-    timeframe: "2026-Present",
+    timeframe: "2025-Present",
     location: "Stanford, CA", //tags: ["UX", "UI", "Figma", "Design Systems"]
     bullets: [
       "Designed and refined multi-lecture selection flows, improving clarity and decision-making",

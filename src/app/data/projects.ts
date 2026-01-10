@@ -26,7 +26,7 @@ export const projects: Project[] = [
       "Designed new graphs + review flows",
     ],
     image: "/projects/147.png",
-    link: "https://carta-beta.stanford.edu/", // ← add this
+    link: "https://web.stanford.edu/class/cs147/projects/DesigningVoiceAIforEverydayValue/PillPal/", // ← add this
   },
   {
     slug: "xr-grid-authoring",

@@ -82,10 +82,25 @@ export default function Home() {
                     Min Jung
                   </h1>
                   <p className="mt-8 max-w-2xl text-[15px] leading-7 text-zinc-700 md:text-[17px] md:leading-8">
-                    I&apos;m a designer and developer studying{" "}
+                    I&apos;m a{" "}
+                    <span className="highlight">
+                      designer and developer
+                      <svg
+                        className="underline"
+                        viewBox="0 0 200 20"
+                        preserveAspectRatio="none"
+                      >
+                        <path
+                          d="M0 10 Q 25 0, 50 10 T 100 10 T 150 10 T 200 10"
+                          fill="none"
+                          stroke="#e63946"
+                          strokeWidth="3"
+                        />
+                      </svg>
+                    </span>{" "}
+                    studying{" "}
                     <span className="font-semibold text-zinc-900">
-                      Symbolic Systems
-                      (Human-Computer Interaction)
+                      Symbolic Systems (Human-Computer Interaction)
                     </span>{" "}
                     at Stanford University.
                   </p>
