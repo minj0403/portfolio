@@ -13,7 +13,7 @@ export const experience: Experience[] = [
     org: "Product Designer",
     role: "VP of Events",
     timeframe: "2026-Present",
-    location: "Stanford", //tags: ["UX", "UI", "Figma", "Design Systems"]
+    location: "Stanford, CA", //tags: ["UX", "UI", "Figma", "Design Systems"]
     bullets: [
       "Designed and refined multi-lecture selection flows, improving clarity and decision-making",
       "Conducted usability analysis and iterative prototyping in Figma, translating user pain points into consistent interfaces.",
@@ -25,7 +25,7 @@ export const experience: Experience[] = [
     org: "Software Engineer (Data & ML Systems)",
     role: "Research Assistant",
     timeframe: "2025-Present",
-    location: "Stanford",
+    location: "Stanford, CA",
     bullets: [
       "Built JS and Python pipelines to parse and structure task logic from web-based experiments.",
       "Developed LLM-powered systems to infer task logic and generate structured behavioral data.",
