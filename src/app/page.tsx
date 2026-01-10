@@ -25,7 +25,7 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr] md:items-center pt-6 -translate-y-10">
                 {/* Left: Polaroid + links */}
                 <div className="flex flex-col items-start">
-                  <div className="rounded-md border border-zinc-300/70 bg-white p-3 shadow-sm">
+                  <div className="polaroid rounded-md border border-zinc-300/70 bg-white p-3 shadow-sm">
                     <div className="relative h-[240px] w-[220px] overflow-hidden rounded-sm bg-zinc-100">
                       <Image
                         src="/me.jpg"
@@ -44,31 +44,36 @@ export default function Home() {
                       href={site.links.linkedin}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      className="group flex items-center gap-2 text-sm text-zinc-700 transition-colors hover:text-zinc-900"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin size={18} />
-                      <span>LinkedIn</span>
+                      <Linkedin
+                        size={18}
+                        className="transition-transform group-hover:translate-x-0.5"
+                      />
+                      <span className="transition-transform group-hover:translate-x-0.5">
+                        LinkedIn
+                      </span>
                     </a>
 
                     <a
                       href={`mailto:${site.email}`}
-                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      className="group flex items-center gap-2 text-sm text-zinc-700 transition-colors hover:text-zinc-900"
                       aria-label="Email"
                     >
-                      <Mail size={18} />
-                      <span>Email</span>
+                      <Mail size={18} className="transition-transform group-hover:translate-x-0.5" />
+                      <span className="transition-transform group-hover:translate-x-0.5">Email</span>
                     </a>
 
                     <a
                       href={site.links.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-900"
+                      className="group flex items-center gap-2 text-sm text-zinc-700 transition-colors hover:text-zinc-900"
                       aria-label="GitHub"
                     >
-                      <Github size={18} />
-                      <span>GitHub</span>
+                      <Github size={18} className="transition-transform group-hover:translate-x-0.5" />
+                      <span className="transition-transform group-hover:translate-x-0.5">GitHub</span>
                     </a>
                   </div>
                 </div>

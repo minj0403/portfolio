@@ -49,3 +49,56 @@ body {
     stroke-dashoffset: 0;
   }
 }
+
+.polaroid {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  transform-origin: center;
+}
+
+.polaroid:hover {
+  transform: translateY(-6px) rotate(-1.2deg);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.16);
+}
+
+.polaroid:hover {
+  animation: polaroid-pop 220ms ease-out;
+}
+
+@keyframes polaroid-pop {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  60% { transform: translateY(-7px) rotate(-1.2deg) scale(1.02); }
+  100% { transform: translateY(-6px) rotate(-1.2deg) scale(1); }
+}
+
+.navLink {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.navUnderline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #18181b; /* your red */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  border-radius: 999px;
+}
+
+.navLink:hover .navUnderline {
+  transform: scaleX(1);
+}
+
+.cardHover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  border-color: rgba(24, 24, 27, 0.25);
+}
