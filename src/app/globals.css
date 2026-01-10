@@ -94,7 +94,9 @@ body {
 }
 
 .cardHover {
+  cursor: default;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  will-change: transform;
 }
 
 .cardHover:hover {

@@ -3,7 +3,7 @@ import { TagPill } from "@/components/TagPill";
 
 export function ExperienceCard({ item }: { item: Experience }) {
   return (
-    <div className="rounded-2xl border border-zinc-300/70 bg-white/70 p-4 shadow-sm">
+    <div className="cardHover rounded-2xl border border-zinc-300/70 bg-white/70 p-4 shadow-sm">
       {/* Image slot */}
       <div className="h-44 w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
         {item.image && (
@@ -32,7 +32,6 @@ export function ExperienceCard({ item }: { item: Experience }) {
           {item.location && <TagPill>{item.location}</TagPill>}
         </div>
 
-        {/* View more link */}
         {item.link && (
           <a
             href={item.link}
