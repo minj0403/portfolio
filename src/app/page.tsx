@@ -91,10 +91,67 @@ export default function Home() {
                         preserveAspectRatio="none"
                       >
                         <path
-                          d="M0 10 Q 25 0, 50 10 T 100 10 T 150 10 T 200 10"
+                          d="
+                            M0 10
+                            Q10 3, 20 10
+                            T40 10
+                            T60 10
+                            T80 10
+                            T100 10
+                            T120 10
+                            T140 10
+                            T160 10
+                            T180 10
+                            T200 10
+                          "
                           fill="none"
                           stroke="#e63946"
                           strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="
+                            M0 10
+                            Q10 3, 20 10
+                            T40 10
+                            T60 10
+                            T80 10
+                            T100 10
+                            T120 10
+                            T140 10
+                            T160 10
+                            T180 10
+                            T200 10
+                          "
+                          fill="none"
+                          stroke="#e63946"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+
+                        {/* subtle “ink wobble” overlay */}
+                        <path
+                          d="
+                            M0 11
+                            Q10 4, 20 11
+                            T40 11
+                            T60 11
+                            T80 11
+                            T100 11
+                            T120 11
+                            T140 11
+                            T160 11
+                            T180 11
+                            T200 11
+                          "
+                          fill="none"
+                          stroke="#e63946"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          opacity="0.35"
                         />
                       </svg>
                     </span>{" "}
