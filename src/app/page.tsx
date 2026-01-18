@@ -3,11 +3,10 @@ import { Container } from "@/components/Container";
 import { Nav } from "@/components/Nav";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ExperienceCard } from "@/components/ExperienceCard";
 import { site } from "@/data/site";
 import { projects } from "@/data/projects";
-import { experience } from "@/data/experience";
-import { Linkedin, Mail, Github } from "lucide-react";
+import { Linkedin, Mail, FileText } from "lucide-react";
+import { ExperienceRow } from "@/components/ExperienceRow";
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -66,14 +65,14 @@ export default function Home() {
                     </a>
 
                     <a
-                      href={site.links.github}
+                      href="/resume.pdf"
                       target="_blank"
                       rel="noreferrer"
                       className="group flex items-center gap-2 text-sm text-zinc-700 transition-colors hover:text-zinc-900"
-                      aria-label="GitHub"
+                      aria-label="Resume"
                     >
-                      <Github size={18} className="transition-transform group-hover:translate-x-0.5" />
-                      <span className="transition-transform group-hover:translate-x-0.5">GitHub</span>
+                      <FileText size={18} className="transition-transform group-hover:translate-x-0.5" />
+                      <span className="transition-transform group-hover:translate-x-0.5">Resume</span>
                     </a>
                   </div>
                 </div>
@@ -88,13 +87,14 @@ export default function Home() {
                   </h1>
                   <p className="mt-8 max-w-2xl text-[15px] leading-7 text-zinc-700 md:text-[17px] md:leading-8">
                     I&apos;m a{" "}
-                    <span className="highlight">
-                      designer and developer
-                      <svg
-                        className="underline"
-                        viewBox="0 0 200 20"
-                        preserveAspectRatio="none"
-                      >
+                    <span className="highlight relative inline-block">
+                        designer and developer
+                        <svg
+                          className="absolute left-0 -bottom-1 w-full h-4"
+                          viewBox="0 0 200 20"
+                          preserveAspectRatio="none"
+                          aria-hidden="true"
+                        >
                         <path
                           d="
                             M0 10
@@ -172,8 +172,8 @@ export default function Home() {
 
             {/* PROJECTS */}
             <section id="projects" className="mt-6 md:mt-10">
-              <SectionHeader title="Projects" />
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              <SectionHeader title="Projects"/>
+              <div className="grid grid-cols-1 gap-5">
                 {featuredProjects.map((p) => (
                   <ProjectCard key={p.slug} project={p} />
                 ))}
@@ -181,12 +181,40 @@ export default function Home() {
             </section>
 
             {/* EXPERIENCE */}
-            <section id="experience" className="mt-20 md:mt-36">
+             <section id="experience" className="mt-60">
               <SectionHeader title="Experience" />
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                {experience.map((e) => (
-                  <ExperienceCard key={`${e.org}-${e.role}`} item={e} />
-                ))}
+
+              <div className="mt-8 border-b border-zinc-300/70">
+                <ExperienceRow
+                  role="Product Designer"
+                  org="Stanford Carta"
+                  orgLink="https://carta-dev-trailblazer.stanford.edu"
+                  timeframe="Jan 2025 – Present"
+                />
+
+                <ExperienceRow
+                  role="Web Designer & Developer"
+                  org="Stanford MINT Magazine"
+                  orgLink="https://www.stanford-mint.com"
+                  timeframe="Oct 2025 – Present"
+                />
+
+                <ExperienceRow
+                  role="Software Engineer (Data & ML Systems)"
+                  org="Poldrack Lab @ Stanford"
+                  orgLink="https://www.poldracklab.org"
+                  timeframe="Sep 2025 – Jan 2026"
+                />
+              </div>
+
+              {/* Tools image */}
+              <div className="mt-10 overflow-hidden rounded-xl bg-white/60">
+                <img
+                  src="/tools.png"
+                  alt="Tools and technologies"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
               </div>
             </section>
           </Container>

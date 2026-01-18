@@ -9,14 +9,15 @@ export type Project = {
   link?: string;
   featured?: boolean;
   highlights?: string[];
+  tagColor?: "green" | "blue" | "purple" | "mint";
 };
 
 export const projects: Project[] = [
   {
-    slug: "carta-redesign",
+    slug: "pillpal",
     title: "Voice-Enabled Medication Tracker App",
     description:
-      "Led end-to-end UX design from needfinding, usability testing, and iterative prototyping and implemented mobile and web front-end interfaces in React Native and Next.js",
+      "End-to-end product design from needfinding, usability testing, to iterative prototyping and mobile/web front-end implementation",
     role: "UX/UI Designer",
     timeframe: "2025",
     tags: ["UI/UX", "Figma", "React"],
@@ -27,6 +28,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/147.png",
     link: "https://web.stanford.edu/class/cs147/projects/DesigningVoiceAIforEverydayValue/PillPal/", // ← add this
+    tagColor: "mint", 
   },
   {
     slug: "xr-grid-authoring",
@@ -39,5 +41,19 @@ export const projects: Project[] = [
     featured: true,
     image: "/projects/ipad.jpg",
     link: "https://shape.stanford.edu/", // ← can be internal later
+    tagColor: "blue", 
+  },
+  {
+    slug: "SUPA-website",
+    title: "Stanford Undergraduate Psychology Association Website",
+    description:
+      "Built end-to-end website from design to implementation to launch",
+    role: "Front-End / Prototyping",
+    timeframe: "2025",
+    tags: ["UI/UX", "Front-end", "Accessibility"],
+    featured: true,
+    image: "",
+    link: "",
+    tagColor: "purple",
   },
 ];
