@@ -135,10 +135,28 @@ export default async function ProjectDetailPage({
             alt="Pill Pal project page (slide 5)"
           />
 
-          {/* Sixth long PNG */}
+          {/* spreadsheet link */}
+          <p className="mt-6 text-center text-sm text-zinc-800">
+            <a
+              href="https://docs.google.com/spreadsheets/d/1p1itdZh_1XpBbNxaY_1LlPAIanpug1Gu8nHDKWLyU8Y/edit?gid=1916536935#gid=1916536935"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 hover:text-zinc-900"
+            >
+              View how I synthesized user testing results!
+            </a>
+          </p>
+
+          {/* 6th long PNG */}
           <LongSlide
             src="/projects/pillpal-page-6.png"
             alt="Pill Pal project page (slide 6)"
+          />
+
+          {/* 7th long PNG */}
+          <LongSlide
+            src="/projects/pillpal-page-7.png"
+            alt="Pill Pal project page (slide 7)"
           />
 
           {/* Github repo link */}
@@ -153,10 +171,10 @@ export default async function ProjectDetailPage({
             </a>
           </p>
 
-          {/* 7th long PNG */}
+          {/* 8th long PNG */}
           <LongSlide
-            src="/projects/pillpal-page-7.png"
-            alt="Pill Pal project page (slide 7)"
+            src="/projects/pillpal-page-8.png"
+            alt="Pill Pal project page (slide 8)"
           />
 
           {/* expogo link */}
@@ -171,10 +189,10 @@ export default async function ProjectDetailPage({
             </a>
           </p>
 
-          {/* 8th long PNG */}
+          {/* 9th long PNG */}
           <LongSlide
-            src="/projects/pillpal-page-8.png"
-            alt="Pill Pal project page (slide 8)"
+            src="/projects/pillpal-page-9.png"
+            alt="Pill Pal project page (slide 9)"
           />
 
           {/* final report link */}
