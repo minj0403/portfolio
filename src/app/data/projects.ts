@@ -16,44 +16,36 @@ export const projects: Project[] = [
   {
     slug: "pillpal",
     title: "Voice-Enabled Medication Tracker App",
-    description:
-      "End-to-end product design from needfinding, usability testing, to iterative prototyping and mobile/web front-end implementation",
-    role: "UX/UI Designer",
+    description: "End-to-end product design from needfinding, prototyping, testing, to front-end mobile/web development",
+    role: "UX Designer & Mobile App Developer",
     timeframe: "2025",
     tags: ["UI/UX", "Figma", "React"],
     featured: true,
-    highlights: [
-      "Reworked information architecture for the course view",
-      "Designed new graphs + review flows",
-    ],
-    image: "/projects/147.png",
-    link: "https://web.stanford.edu/class/cs147/projects/DesigningVoiceAIforEverydayValue/PillPal/", // ← add this
-    tagColor: "mint", 
+    image: "/projects/pillpalpolaroid.png",
+    tagColor: "mint",
   },
   {
     slug: "xr-grid-authoring",
     title: "Multimodal iPadOS Development",
-    description:
-      "Built multi-sensory interaction flows using spatialized audio, haptic feedback, and tactile cues and led end-to-end HCI research",
-    role: "Front-End / Prototyping",
+    description: "Led HCI research and built multi-sensory interaction flows using spatialized audio, haptic feedback, and tactile cues",
+    role: "HCI Researcher & Mobile App Developer",
     timeframe: "2025",
-    tags: ["SwiftUI", "UI/UX"],
+    tags: ["SwiftUI", "Accessibility"],
     featured: true,
-    image: "/projects/ipad.jpg",
-    link: "https://shape.stanford.edu/", // ← can be internal later
-    tagColor: "blue", 
+    image: "/projects/shapelabpolaroid.png",
+    tagColor: "blue",
   },
-  {
-    slug: "SUPA-website",
+  /*!
+    {
+    slug: "supa-website",
     title: "Stanford Undergraduate Psychology Association Website",
-    description:
-      "Built end-to-end website from design to implementation to launch",
-    role: "Front-End / Prototyping",
+    description: "Designed a website from design to implementation to launch",
+    role: "UI Designer & Web Developer",
     timeframe: "2025",
-    tags: ["UI/UX", "Front-end", "Accessibility"],
+    tags: ["Web Design", "Web Dev", "Front-end"],
     featured: true,
-    image: "",
-    link: "",
+    image: "/projects/supapolaroid.png",
     tagColor: "purple",
   },
+  */
 ];

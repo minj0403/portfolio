@@ -1,60 +1,56 @@
 import Link from "next/link";
-import type { Project } from "../data/projects";
-import { TagPill } from "../components/TagPill";
+import { Project } from "@/data/projects";
+import { ProjectPolaroid } from "@/components/ProjectPolaroid";
+import { TagPill } from "@/components/TagPill";
 
-export function ProjectCard({ project }: { project: Project }) {
-  const isPillPal = project.slug === "pillpal";
+type Props = { project: Project };
+
+export function ProjectCard({ project }: Props) {
+  const href = `/projects/${project.slug}`;
+  const cover = project.image && project.image.trim() ? project.image : "/projects/placeholder.png";
 
   return (
-    <div className="rounded-2xl border border-zinc-300/70 bg-white/70 p-6 shadow-sm">
-      <div className="flex flex-col gap-6 sm:flex-row">
-        {/* LEFT: Image */}
-        <div className="w-full sm:w-100">
-          <div className="h-70 w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 sm:h-[340px]">
-            {project.image && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-cover"
-              />
-            )}
-          </div>
-        </div>
+    <div className="grid grid-cols-1 gap-10 py-14 md:grid-cols-[520px_minmax(0,1fr)] md:items-center">
+      {/* LEFT */}
+      <div className="flex justify-center md:justify-start md:-ml-[-30px] md:shrink-0">
+        <ProjectPolaroid
+          href={href}
+          src={cover}
+          alt={project.title}
+          imgClassName="w-[420px] md:w-[400px] max-w-[90vw] h-auto"
+          rotateClassName="-rotate-0"
+        />
+      </div>
 
-        {/* RIGHT: Content (centered vertically) */}
-        <div className="flex flex-1 flex-col justify-center">
-
-          {/* Title */}
-          <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-1xl">
+      {/* RIGHT */}
+      <div className="min-w-0 md:-ml-20 max-w-xl">
+        <Link href={href} className="group inline-block">
+          <h3 className="text-2xl font-bold tracking-tight text-zinc-900">
             {project.title}
           </h3>
+        </Link>
 
-          {/* Role (subheading) */}
-          <p className="mt-2 text-sm font-semibold text-zinc-800 sm:text-md">
-            UI Designer &amp; Mobile App Developer
+        {project.role ? (
+          <p className="mt-3 text-lg font-semibold text-zinc-900">
+            {project.role}
           </p>
+        ) : null}
 
-          {/* Description */}
-          <p className="mt-4 inline-black text-sm font-medium text-zinc-700">
+        {project.description ? (
+          <p className="mt-4 text-[16px] leading-7 text-zinc-700 whitespace-normal break-words">
             {project.description}
           </p>
+        ) : null}
 
-          {/* Tags */}
-          <div className="mt-5 flex flex-wrap gap-2">
+        {project.tags?.length ? (
+          <div className="mt-6 flex flex-wrap gap-3">
             {project.tags.map((tag) => (
               <TagPill key={tag} color={project.tagColor}>
                 {tag}
               </TagPill>
             ))}
           </div>
-          {/* Link */}
-          <Link
-            href={`/projects/${project.slug}`}
-            className="mt-6 inline-block text-base font-medium text-zinc-900 hover:underline"
-          >
-            View project →
-          </Link>
-        </div>
+        ) : null}
       </div>
     </div>
   );
