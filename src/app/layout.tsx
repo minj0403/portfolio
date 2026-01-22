@@ -3,6 +3,13 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
+export const metadata = {
+  title: "Min Jung",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -12,4 +19,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

@@ -100,7 +100,7 @@ export default function AboutPage() {
   </strong>{" "}
    with a concentration in {" "}
   <strong className="font-semibold text-zinc-900">Human-Computer Interaction</strong>{" "}
-   at Stanford University. In my free time, I enjoy painting animals and shooting with film.
+   at Stanford University. In my free time, I enjoy painting animals and shooting with film. 📷
 </p>
 
 <p className="mt-6 max-w-2xl text-[15px] leading-7 text-zinc-700 md:text-[17px] md:leading-8">
